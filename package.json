@@ -1,0 +1,59 @@
+{
+  "name": "webapp",
+  "version": "0.1.0",
+  "private": true,
+  "engineStrict": true,
+  "engines": {
+    "node": ">= 10.13.0"
+  },
+  "dependencies": {
+    "@rebass/grid": "^6.0.0-7",
+    "axios": "^0.18.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.8.3",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.5",
+    "redux": "^4.0.1",
+    "redux-actions": "^2.6.4",
+    "redux-saga": "^1.0.2",
+    "reselect": "^4.0.0",
+    "styled-components": "^4.1.3"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint",
+      "stylelint --config .stylelintrc.json"
+    ]
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "precommit": "lint-staged",
+    "lint": "./node_modules/.bin/eslint ./src/**/*.js"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-redux-saga": "^0.10.0",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.4",
+    "redux-devtools-extension": "^2.13.8",
+    "stylelint": "^9.10.1",
+    "stylelint-config-recommended": "^2.1.0",
+    "stylelint-config-standard": "^18.2.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.5.2"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
