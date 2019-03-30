@@ -1,5 +1,6 @@
 const initialState = {
   isLoading: false,
+  isAuthenticated: false,
   error: '',
   user: {},
 };
@@ -12,6 +13,7 @@ export const authenticateRequest = state => ({
 export const authenticateSuccess = (state, { payload }) => ({
   ...state,
   isLoading: false,
+  isAuthenticated: true,
   user: payload,
 });
 

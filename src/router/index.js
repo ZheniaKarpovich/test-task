@@ -1,15 +1,23 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import Main from 'modules/main';
+import Login from 'modules/login';
 import PrivateRoute from './PrivateRoute';
 
 
-const AppRouter = () => (
+const AppRouter = ({ isAuthenticated }) => (
   <Router>
     <Switch>
+      <Route
+        exact
+        path="/login"
+        component={Login}
+      />
       <PrivateRoute
-        authenticated
+        authenticated={isAuthenticated}
         path="/"
         component={Main}
       />
@@ -17,4 +25,12 @@ const AppRouter = () => (
   </Router>
 );
 
-export default AppRouter;
+AppRouter.propTypes = {
+  isAuthenticated: PropTypes.bool.isRequired,
+};
+
+const mapStateToProps = ({ auth }) => ({
+  isAuthenticated: auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps)(AppRouter);

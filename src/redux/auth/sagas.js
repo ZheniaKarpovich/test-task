@@ -6,7 +6,7 @@ import { actions as types } from './index';
 function* onAuthenticate() {
   try {
     const params = 'hello';
-    const response = yield call(authentificate, params);
+    const { response } = yield call(authentificate, params);
 
     localStorage.setItem('access_token', response.access_token);
 
