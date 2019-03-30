@@ -10,6 +10,12 @@ import Logo from './images/bear-face.svg';
 import * as S from './styled';
 
 class Login extends Component {
+  componentDidMount() {
+    const { actions } = this.props;
+
+    actions.isAuthenticated();
+  }
+
   componentDidUpdate(prevProps) {
     const { history, isAuthenticated } = this.props;
 
@@ -43,6 +49,7 @@ Login.propTypes = {
   history: PropTypes.shape({}).isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
   actions: PropTypes.shape({
+    isAuthenticated: PropTypes.func.isRequired,
     authenticateRequest: PropTypes.func.isRequired,
   }).isRequired,
 };

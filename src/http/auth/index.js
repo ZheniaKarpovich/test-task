@@ -1,5 +1,5 @@
 import http from 'http/index';
 
-const authentificate = uuid => http.post('/api/v1/auth/uuidLogin', { uuid }).then(res => res.data);
+export const authentificate = uuid => http.post('/api/v1/auth/uuidLogin', { uuid }).then(res => res.data);
 
-export default authentificate;
+export const getUser = () => http.get('/api/v1/auth/user').then(res => res.data.response);

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { actions as jogsActions } from 'redux/jogs';
+import Form from './Form';
 import Item from './Item';
 import * as S from './styled';
 
@@ -15,7 +16,13 @@ class Jogs extends Component {
   }
 
   render() {
-    const { jogs } = this.props;
+    const { jogs, isOpen } = this.props;
+
+    if (isOpen) {
+      return (
+        <Form />
+      );
+    }
 
     return (
       <S.Wrapper>
@@ -30,6 +37,7 @@ class Jogs extends Component {
 }
 
 Jogs.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
   jogs: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   actions: PropTypes.shape({
     getJogsRequest: PropTypes.func.isRequired,
@@ -38,6 +46,7 @@ Jogs.propTypes = {
 
 const mapStateToProps = ({ jogs }) => ({
   jogs: jogs.list,
+  isOpen: jogs.isOpen,
 });
 
 const mapDispatchToProps = dispatch => ({
