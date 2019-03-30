@@ -13,7 +13,7 @@ class Login extends Component {
   componentDidUpdate(prevProps) {
     const { history, isAuthenticated } = this.props;
 
-    if (prevProps.isAuthenticated !== isAuthenticated) {
+    if (!prevProps.isAuthenticated && isAuthenticated) {
       history.replace('/');
     }
   }

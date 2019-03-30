@@ -9,7 +9,7 @@ http.interceptors.request.use(config => ({
   ...config,
   headers: {
     ...config.headers,
-    Authorization: localStorage.getItem('access_token'),
+    Authorization: `Bearer ${localStorage.getItem('access_token')}`,
   },
 }), error => Promise.reject(error));
 

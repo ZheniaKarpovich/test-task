@@ -18,7 +18,7 @@ Header.defaultProps = {
 };
 
 Header.propTypes = {
-  component: PropTypes.node,
+  component: PropTypes.func,
 };
 
 export default Header;
