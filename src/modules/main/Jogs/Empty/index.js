@@ -9,7 +9,7 @@ import * as S from './styled';
 
 const Empty = ({ actions }) => (
   <S.Wrapper>
-    <img src={Icon} alt="icon" />
+    <S.Img src={Icon} alt="icon" />
     <S.Title>Nothing is there</S.Title>
     <S.AddButton
       onClick={() => actions.toggleModal()}

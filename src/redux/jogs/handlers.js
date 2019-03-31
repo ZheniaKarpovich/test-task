@@ -3,8 +3,20 @@ const initialState = {
   error: '',
   filter: false,
   isOpen: false,
+  fromDate: null,
+  toDate: null,
   list: [],
 };
+
+export const setToDate = (state, { payload }) => ({
+  ...state,
+  toDate: payload,
+});
+
+export const setFromDate = (state, { payload }) => ({
+  ...state,
+  fromDate: payload,
+});
 
 export const toggleModal = state => ({
   ...state,

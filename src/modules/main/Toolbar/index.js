@@ -4,13 +4,36 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { bindActionCreators } from 'redux';
 
+import IconButton from 'components/IconButton';
+import { actions as appActions } from 'redux/app';
 import { actions as jogsActions } from 'redux/jogs';
 import Active from './images/filter-active.svg';
+import Menu from './images/menu.png';
 import Logo from './images/filter.svg';
 import * as S from './styled';
 
-const Toolbar = ({ location, actions, filter }) => {
+const Toolbar = ({
+  location,
+  actions,
+  filter,
+  isMobile,
+}) => {
   const { pathname } = location;
+
+  if (isMobile) {
+    return (
+      <S.Wrapper>
+        <S.Button onClick={() => actions.toggleFilter()}>
+          <img src={filter ? Active : Logo} alt="logo" />
+        </S.Button>
+        <IconButton
+          onClick={() => actions.toggleMenu()}
+          icon={Menu}
+        />
+      </S.Wrapper>
+    );
+  }
+
   return (
     <S.Wrapper>
       <S.Link to="/" active={pathname === '/' ? 1 : 0}>Jogs</S.Link>
@@ -25,7 +48,9 @@ const Toolbar = ({ location, actions, filter }) => {
 
 Toolbar.propTypes = {
   filter: PropTypes.bool.isRequired,
+  isMobile: PropTypes.bool.isRequired,
   actions: PropTypes.shape({
+    toggleMenu: PropTypes.func.isRequired,
     toggleFilter: PropTypes.func.isRequired,
   }).isRequired,
   location: PropTypes.shape({
@@ -34,12 +59,16 @@ Toolbar.propTypes = {
 };
 
 
-const mapStateToProps = ({ jogs }) => ({
+const mapStateToProps = ({ jogs, app }) => ({
   filter: jogs.filter,
+  isMobile: app.isMobile,
 });
 
 const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators({ ...jogsActions }, dispatch),
+  actions: bindActionCreators({
+    ...appActions,
+    ...jogsActions,
+  }, dispatch),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Toolbar));

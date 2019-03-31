@@ -17,10 +17,6 @@ const GlobalStyle = createGlobalStyle`
     color: ${theme.colors.lightBlack};
   }
 
-  a:visited {
-    color: ${theme.colors.lightBlack};
-  }
-
   #root {
     height: 100%;
     color: ${theme.colors.lightBlack};

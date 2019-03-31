@@ -13,10 +13,19 @@ const Item = ({ data }) => {
     <S.Wrapper>
       <img src={Logo} alt="logo" />
       <S.Info>
-        <div>{ formatDate }</div>
-        <div>{ `Speed: ${speed} km/h` }</div>
-        <div>{ `Distance: ${distance} km` }</div>
-        <div>{ `Time: ${time} min` }</div>
+        <S.Item>{ formatDate }</S.Item>
+        <S.Item>
+          <b>Speed:</b>
+          { ` ${speed} km/h` }
+        </S.Item>
+        <S.Item>
+          <b>Distance:</b>
+          { ` ${distance} km` }
+        </S.Item>
+        <S.Item>
+          <b>Time:</b>
+          { ` ${time} min` }
+        </S.Item>
       </S.Info>
     </S.Wrapper>
   );

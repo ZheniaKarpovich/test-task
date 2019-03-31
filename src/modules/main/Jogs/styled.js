@@ -9,9 +9,14 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 420px) {
+    height: calc(100% - 77px);
+  }
 `;
 
 export const FormWrapper = styled.div`
+  width: 100%;
   height: calc(100% - 116px);
   display: flex;
   justify-content: center;

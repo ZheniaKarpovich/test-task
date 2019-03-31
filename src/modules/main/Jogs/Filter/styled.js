@@ -8,6 +8,11 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #eaeaea;
+
+  @media (max-width: 420px) {
+    height: calc(100% - 77px);
+    border-bottom: 1px solid rgb(151, 151, 151);
+  }
 `;
 
 export const Item = styled.div`
@@ -30,4 +35,8 @@ export const DatePicker = styled(ReactDatePicker)`
   border-radius: 11px;
   border: solid 1px #979797;
   outline: none;
+
+  @media (max-width: 420px) {
+    width: 72px;
+  }
 `;

@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import Button from 'components/Button';
 import Header from 'components/Header';
 import { actions as authActions } from 'redux/auth';
 import Logo from './images/bear-face.svg';
+import MobileLogo from './images/bearFace.png';
 import * as S from './styled';
 
 class Login extends Component {
@@ -31,13 +31,15 @@ class Login extends Component {
   }
 
   render() {
+    const { isMobile } = this.props;
+
     return (
       <Fragment>
         <Header />
         <S.Wrapper>
           <S.Content>
-            <img src={Logo} alt="logo" />
-            <Button onClick={this.handleClick}>Let me in</Button>
+            <img src={isMobile ? MobileLogo : Logo} alt="logo" />
+            <S.Button onClick={this.handleClick}>Let me in</S.Button>
           </S.Content>
         </S.Wrapper>
       </Fragment>
@@ -46,15 +48,17 @@ class Login extends Component {
 }
 
 Login.propTypes = {
-  history: PropTypes.shape({}).isRequired,
+  isMobile: PropTypes.bool.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
+  history: PropTypes.shape({}).isRequired,
   actions: PropTypes.shape({
     isAuthenticated: PropTypes.func.isRequired,
     authenticateRequest: PropTypes.func.isRequired,
   }).isRequired,
 };
 
-const mapStateToProps = ({ auth }) => ({
+const mapStateToProps = ({ auth, app }) => ({
+  isMobile: app.isMobile,
   isAuthenticated: auth.isAuthenticated,
 });
 

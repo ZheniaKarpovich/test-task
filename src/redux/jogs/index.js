@@ -3,6 +3,8 @@ import { handleActions, createActions } from 'redux-actions';
 import initialState, * as handlers from './handlers';
 
 export const actions = createActions({
+  SET_FROM_DATE: undefined,
+  SET_TO_DATE: undefined,
   TOGGLE_MODAL: undefined,
   TOGGLE_FILTER: undefined,
   GET_JOGS_REQUEST: undefined,
@@ -15,6 +17,8 @@ export const actions = createActions({
 
 const reducer = handleActions(
   new Map([
+    [actions.setToDate, handlers.setToDate],
+    [actions.setFromDate, handlers.setFromDate],
     [actions.toggleModal, handlers.toggleModal],
     [actions.toggleFilter, handlers.toggleFilter],
     [actions.getJogsRequest, handlers.getJogsRequest],

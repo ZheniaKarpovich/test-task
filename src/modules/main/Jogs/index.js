@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
 import { actions as jogsActions } from 'redux/jogs';
+import getJogs from './selectors';
 import Filter from './Filter';
 import Empty from './Empty';
 import Icon from './images/add.svg';
@@ -69,7 +70,7 @@ Jogs.propTypes = {
 };
 
 const mapStateToProps = ({ jogs }) => ({
-  jogs: jogs.list,
+  jogs: getJogs(jogs),
   filter: jogs.filter,
   isOpen: jogs.isOpen,
 });

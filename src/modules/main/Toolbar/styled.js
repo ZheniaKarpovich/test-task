@@ -7,6 +7,11 @@ export const Wrapper = styled.nav`
 `;
 
 export const Button = styled.button`
+  width: 39px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: inherit;
   border: none;
   outline: none;
@@ -25,5 +30,13 @@ export const Link = styled(RouterLink)`
 
   &:visited {
     color: white;
+  }
+
+  @media (max-width: 717px) {
+    margin: 0 21px 0 21px;
+  }
+
+  @media (max-width: 575px) {
+    margin: 0 10px 0 10px;
   }
 `;

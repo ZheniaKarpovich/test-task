@@ -1,9 +1,22 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+  width: 100%;
+  height: calc(100% - 116px);
+  padding: 85px 25px 0 25px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 420px) {
+    padding: 25px 25px 0 25px;
+  }
+`;
+
+export const Content = styled.div`
+  max-width: 500px;
   display: flex;
   box-sizing: border-box;
-  padding: 85px 415px 0 415px;
   flex-direction: column;
   align-items: center;
 `;

@@ -9,7 +9,8 @@
   ],
   "globals": {
     "localStorage": false,
-    "document": false
+    "document": false,
+    "window": false
   },
   "rules": {
     "import/no-extraneous-dependencies": "off",

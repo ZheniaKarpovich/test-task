@@ -2,22 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Logo from './images/logo.svg';
-import Wrapper from './styled';
+import * as S from './styled';
 
-const Header = ({ component: Component }) => (
-  <Wrapper>
-    <img src={Logo} alt="logo" />
+const Header = ({ component: Component, logo }) => (
+  <S.Wrapper>
+    <S.Img src={logo} alt="logo" />
     {
       Component && <Component />
     }
-  </Wrapper>
+  </S.Wrapper>
 );
 
 Header.defaultProps = {
+  logo: Logo,
   component: null,
 };
 
 Header.propTypes = {
+  logo: PropTypes.string,
   component: PropTypes.func,
 };
 

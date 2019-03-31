@@ -2,6 +2,13 @@ import styled from 'styled-components';
 
 import Button from 'components/Button';
 
+export const Img = styled.img`
+  @media (max-width: 420px) {
+    width: 85px;
+    height: 86px;
+  }
+`;
+
 export const Wrapper = styled.div`
   width: 100%;
   height: calc(100% - 116px);
