@@ -19,8 +19,6 @@ const validate = (values) => {
 
   if (!date) {
     errors.date = 'Required';
-  } else if (typeof date !== 'string') {
-    errors.date = 'Should be string value';
   }
 
   return errors;

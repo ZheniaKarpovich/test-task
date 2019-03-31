@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import IconButton from 'components/IconButton';
 import Button from 'components/Button';
 
 export const Item = styled.div`
@@ -9,13 +10,10 @@ export const Item = styled.div`
   align-items: center;
 `;
 
-export const IconButton = styled.button`
+export const CloseButton = styled(IconButton)`
   position: absolute;
   right: 27px;
-  top: 24px; 
-  background-color: inherit;
-  border: none;
-  outline: none;
+  top: 24px;
 `;
 
 export const SaveButton = styled(Button)`

@@ -4,6 +4,7 @@ import initialState, * as handlers from './handlers';
 
 export const actions = createActions({
   TOGGLE_MODAL: undefined,
+  TOGGLE_FILTER: undefined,
   GET_JOGS_REQUEST: undefined,
   GET_JOGS_SUCCESS: undefined,
   GET_JOGS_FAILURE: undefined,
@@ -15,6 +16,7 @@ export const actions = createActions({
 const reducer = handleActions(
   new Map([
     [actions.toggleModal, handlers.toggleModal],
+    [actions.toggleFilter, handlers.toggleFilter],
     [actions.getJogsRequest, handlers.getJogsRequest],
     [actions.getJogsSuccess, handlers.getJogsSuccess],
     [actions.getJogsFailure, handlers.getJogsFailure],

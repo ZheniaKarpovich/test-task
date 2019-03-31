@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-const Input = styled.input`
+import ReactDatePicker from 'react-datepicker';
+
+const DatePicker = styled(ReactDatePicker)`
   width: 236px;
   height: 31px;
   max-height: 31px;
@@ -14,4 +16,4 @@ const Input = styled.input`
   outline: none;
 `;
 
-export default Input;
+export default DatePicker;

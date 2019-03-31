@@ -1,13 +1,19 @@
 const initialState = {
   isLoading: false,
   error: '',
-  isOpen: true,
+  filter: false,
+  isOpen: false,
   list: [],
 };
 
 export const toggleModal = state => ({
   ...state,
   isOpen: !state.isOpen,
+});
+
+export const toggleFilter = state => ({
+  ...state,
+  filter: !state.filter,
 });
 
 export const getJogsRequest = state => ({

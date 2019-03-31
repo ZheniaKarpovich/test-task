@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
 import InputAdapter from 'components/Adapters/Input';
+import DatePickerAdapter from 'components/Adapters/DatePicker';
 import { actions as jogsActions } from 'redux/jogs';
 import Logo from './images/cancel.svg';
 import validate from './validate';
@@ -28,7 +29,10 @@ class Dealer extends Component {
   onSubmit = (value) => {
     const { actions } = this.props;
 
-    actions.addJogRequest(value);
+    actions.addJogRequest({
+      ...value,
+      date: value.date.getTime(),
+    });
   }
 
   render() {
@@ -39,9 +43,10 @@ class Dealer extends Component {
         subscription={{ submitting: true }}
         render={({ handleSubmit }) => (
           <S.Form onSubmit={handleSubmit}>
-            <S.IconButton onClick={this.handleClick}>
-              <img src={Logo} alt="logo" />
-            </S.IconButton>
+            <S.CloseButton
+              onClick={this.handleClick}
+              icon={Logo}
+            />
             <S.Item>
               { 'Distance' }
               <Field
@@ -60,7 +65,7 @@ class Dealer extends Component {
               { 'Date' }
               <Field // change to datepicker
                 name="date"
-                component={InputAdapter}
+                component={DatePickerAdapter}
               />
             </S.Item>
             <S.SaveButton type="submit"> Save </S.SaveButton>
