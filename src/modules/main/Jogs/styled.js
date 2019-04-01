@@ -1,17 +1,18 @@
 import styled from 'styled-components';
 
+import Flex from 'components/Flex';
 import IconButton from 'components/IconButton';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(Flex).attrs({
+  height: ['calc(100% - 77px)', 'calc(100% - 116px)', 'calc(100% - 116px)'],
+  minHeight: ['calc(100% - 77px)', 'calc(100% - 116px)', 'calc(100% - 116px)'],
+})`
   width: 100%;
-  height: calc(100% - 116px);
-  min-height: calc(100% - 116px);
   overflow: auto;
-  display: flex;
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 420px) {
+  @media (max-height: 504px) {
     height: calc(100% - 77px);
     min-height: calc(100% - 77px);
   }
@@ -32,6 +33,11 @@ export const Button = styled(IconButton)`
     right: 31px;
     bottom: 31px;
   }
+
+  @media (max-width: 350px) {
+    right: 15px;
+    bottom: 15px;
+  }
 `;
 
 export const Content = styled.div`
@@ -44,5 +50,5 @@ export const Content = styled.div`
   justify-content: space-between;
   align-items: center;
   border-radius: 44px;
-  background-color: #e990f9;
+  background-color: ${({ theme }) => theme.colors.secondary};
 `;

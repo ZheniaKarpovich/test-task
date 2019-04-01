@@ -20,6 +20,7 @@ function* onAddJogRequest({ payload }) {
 
     yield put(types.addJogSuccess());
     yield put(types.getJogsRequest());
+    yield put(types.toggleModal());
   } catch (error) {
     yield put(types.addJogFailure(error));
   }

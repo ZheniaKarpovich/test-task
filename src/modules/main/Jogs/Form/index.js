@@ -63,7 +63,7 @@ class Dealer extends Component {
             </S.Item>
             <S.Item>
               { 'Date' }
-              <Field // change to datepicker
+              <Field
                 name="date"
                 component={DatePickerAdapter}
               />

@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #eaeaea;
+  background-color: ${({ theme }) => theme.colors.gray};
 
   @media (max-width: 420px) {
     height: calc(100% - 77px);
@@ -33,7 +33,7 @@ export const DatePicker = styled(ReactDatePicker)`
   font-size: 14px;
   background: white;
   border-radius: 11px;
-  border: solid 1px #979797;
+  border: solid 1px ${({ theme }) => theme.colors.lightGrey};
   outline: none;
 
   @media (max-width: 420px) {

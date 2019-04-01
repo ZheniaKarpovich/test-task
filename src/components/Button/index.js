@@ -9,8 +9,8 @@ const Button = styled.button`
   border-radius: 36px;
   font-size: 18px;
   font-weight: bold;
-  color: #ffffff;
-  border: solid 3px #ffffff;
+  color: ${({ theme }) => theme.colors.white};
+  border: solid 3px ${({ theme }) => theme.colors.white};
   background-color: inherit;
   outline: none;
 `;

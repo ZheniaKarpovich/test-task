@@ -9,10 +9,9 @@ export const Wrapper = styled.nav`
 
 export const Link = styled(RouterLink)`
   margin: 10px;
-  color: black;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 24px;
   line-height: 26px;
-  color: ${({ active }) => (active ? '#7ed321' : 'black')};
+  color: ${({ active, theme }) => (active ? theme.colors.primary : theme.colors.darkGray)};
 `;

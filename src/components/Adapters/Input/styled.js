@@ -10,7 +10,7 @@ const Input = styled.input`
   font-size: 14px;
   background: white;
   border-radius: 7px;
-  border: solid 1px #979797;
+  border: solid 1px ${({ error, theme }) => (error ? theme.colors.error : theme.colors.lightGrey)};
   outline: none;
 `;
 

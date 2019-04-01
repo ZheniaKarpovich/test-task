@@ -1,16 +1,18 @@
 import styled from 'styled-components';
-import { Flex } from '@rebass/grid';
 
-export const Wrapper = styled(Flex)`
+import Flex from 'components/Flex';
+
+export const Wrapper = styled(Flex).attrs({
+  height: [77, 116, 116],
+})`
   width: 100%;
-  height: 116px;
-  padding: 30px 30px 30px 37px;
+  padding: 0 30px 0 37px;
   box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
-  background-color: #7ed321;
+  background-color: ${({ theme }) => theme.colors.primary};
 
-  @media (max-width: 420px) {
+  @media (max-height: 504px) {
     height: 77px;
   }
 `;

@@ -10,11 +10,13 @@ const DatePickerAdapter = ({
     onChange,
     ...input
   },
+  meta: { error, touched },
   ...other
 }) => (
   <DatePicker
     selected={value || null}
     onChange={onChange}
+    error={error && touched}
     dateFormat="dd.MM.yyyy"
     {...input}
     {...other}
@@ -27,6 +29,10 @@ DatePickerAdapter.propTypes = {
   input: PropTypes.shape({
     onChange: PropTypes.func.isRequired,
     value: PropTypes.any.isRequired,
+  }).isRequired,
+  meta: PropTypes.shape({
+    error: PropTypes.string,
+    touched: PropTypes.bool.isRequired,
   }).isRequired,
 };
 

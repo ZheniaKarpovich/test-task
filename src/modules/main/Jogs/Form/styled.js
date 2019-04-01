@@ -9,7 +9,7 @@ export const Item = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 504px) {
+  @media (max-width: 504px), (max-height: 504px) {
     flex-direction: column;
     align-items: flex-start;
   }
@@ -27,8 +27,8 @@ export const SaveButton = styled(Button)`
   border-radius: 25.2px;
   font-size: 12.6px;
 
-  @media (max-width: 504px) {
-    width: 237px
+  @media (max-width: 504px), (max-height: 504px) {
+    width: 237px;
   }
 `;
 
@@ -44,10 +44,10 @@ export const Form = styled(({ ...rest }) => (
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #7ed321;
+  background-color: ${({ theme }) => theme.colors.primary};
 
-  @media (max-width: 504px) {
-    width: 307px
+  @media (max-width: 504px), (max-height: 504px) {
+    width: 307px;
     height: 380px;
     padding: 64px 36px 37px 36px;
   }

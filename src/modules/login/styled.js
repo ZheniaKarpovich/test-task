@@ -20,7 +20,7 @@ export const Content = styled.div`
   justify-content: space-between;
   align-items: center;
   border-radius: 44px;
-  background-color: #e990f9;
+  background-color: ${({ theme }) => theme.colors.secondary};
 
   @media (max-width: 420px) {
     background-color: inherit;
@@ -29,18 +29,7 @@ export const Content = styled.div`
 
 export const Button = styled(ButtonComonent)`
   @media (max-width: 420px) {
-    color: #e990f9;
-    border: solid 3px #e990f9;
-  }
-`;
-
-export const Img = styled.img`
-  #facebook-logo:hover path {
-    fill: red;
-  }
-  @media (max-width: 420px) {
-    svg g path{
-      fill: #e990f9;
-    }
+    color: ${({ theme }) => theme.colors.secondary};
+    border: solid 3px ${({ theme }) => theme.colors.secondary};
   }
 `;

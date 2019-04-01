@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   justify-content: center;
   overflow: auto;
 
-  @media (max-width: 420px) {
+  @media (max-width: 420px), (max-height: 504px) {
     padding: 25px 25px 0 25px;
   }
 `;
@@ -31,6 +31,6 @@ export const Item = styled.div`
 `;
 
 export const Title = styled.h2`
-  color: #7ed321;
+  color: ${({ theme }) => theme.colors.primary};
   align-self: flex-start;
 `;

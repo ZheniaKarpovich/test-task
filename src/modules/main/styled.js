@@ -18,5 +18,5 @@ export const Content = styled.div`
   justify-content: space-between;
   align-items: center;
   border-radius: 44px;
-  background-color: #e990f9;
+  background-color: ${({ theme }) => theme.colors.secondary};
 `;
