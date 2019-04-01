@@ -39,7 +39,7 @@ const Toolbar = ({
       <S.Link to="/" active={pathname === '/' ? 1 : 0}>Jogs</S.Link>
       <S.Link to="/info" active={pathname === '/info' ? 1 : 0}>info</S.Link>
       <S.Link to="/contacts" active={pathname === '/contacts' ? 1 : 0}>contact us</S.Link>
-      <S.Button onClick={() => actions.toggleFilter()}>
+      <S.Button onClick={() => pathname === '/' && actions.toggleFilter()}>
         <img src={filter ? Active : Logo} alt="logo" />
       </S.Button>
     </S.Wrapper>
