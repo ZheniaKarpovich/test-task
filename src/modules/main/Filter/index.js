@@ -16,7 +16,7 @@ const Filter = ({ toDate, fromDate, actions }) => (
         maxDate={toDate}
       />
     </S.Item>
-    <S.Item>
+    <S.LeftItem>
       <div>Date to</div>
       <S.DatePicker
         popperPlacement="bottom-end"
@@ -24,7 +24,7 @@ const Filter = ({ toDate, fromDate, actions }) => (
         onChange={actions.setToDate}
         minDate={fromDate}
       />
-    </S.Item>
+    </S.LeftItem>
   </S.Wrapper>
 );
 
