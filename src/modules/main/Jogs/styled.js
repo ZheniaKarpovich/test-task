@@ -5,6 +5,7 @@ import IconButton from 'components/IconButton';
 export const Wrapper = styled.div`
   width: 100%;
   height: calc(100% - 116px);
+  min-height: calc(100% - 116px);
   overflow: auto;
   display: flex;
   flex-direction: column;
@@ -12,12 +13,11 @@ export const Wrapper = styled.div`
 
   @media (max-width: 420px) {
     height: calc(100% - 77px);
+    min-height: calc(100% - 77px);
   }
 `;
 
-export const FormWrapper = styled.div`
-  width: 100%;
-  height: calc(100% - 116px);
+export const FormWrapper = styled(Wrapper)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -27,6 +27,11 @@ export const Button = styled(IconButton)`
   position: absolute;
   right: 40px;
   bottom: 40px;
+
+  @media (max-width: 420px) {
+    right: 31px;
+    bottom: 31px;
+  }
 `;
 
 export const Content = styled.div`

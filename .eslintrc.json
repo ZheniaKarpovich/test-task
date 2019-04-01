@@ -5,12 +5,16 @@
     "import",
     "jsx-a11y",
     "react",
-    "redux-saga"
+    "redux-saga",
+    "jest"
   ],
   "globals": {
     "localStorage": false,
     "document": false,
     "window": false
+  },
+  "env": {
+    "jest/globals": true
   },
   "rules": {
     "import/no-extraneous-dependencies": "off",

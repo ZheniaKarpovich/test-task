@@ -3,7 +3,7 @@ import { call, put, takeEvery } from 'redux-saga/effects';
 import * as authHTTP from 'http/auth';
 import { actions as types } from './index';
 
-function* onAuthenticate() {
+export function* onAuthenticate() {
   try {
     const { response } = yield call(authHTTP.authentificate, process.env.REACT_APP_UUID);
 
@@ -16,7 +16,7 @@ function* onAuthenticate() {
   }
 }
 
-function* onGetUserRequest() {
+export function* onGetUserRequest() {
   try {
     const user = yield call(authHTTP.getUser);
 

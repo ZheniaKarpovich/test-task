@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   box-sizing: border-box;
   display: flex;
   justify-content: center;
+  overflow: auto;
 
   @media (max-width: 420px) {
     padding: 25px 25px 0 25px;
