@@ -19,6 +19,7 @@ const Filter = ({ toDate, fromDate, actions }) => (
     <S.Item>
       <div>Date to</div>
       <S.DatePicker
+        popperPlacement="bottom-end"
         selected={toDate}
         onChange={actions.setToDate}
         minDate={fromDate}
