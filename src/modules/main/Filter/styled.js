@@ -3,7 +3,8 @@ import ReactDatePicker from 'react-datepicker';
 
 export const Wrapper = styled.div`
   width: 100%;
-  min-height: 60px;
+  height: 60px;
+  max-height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;

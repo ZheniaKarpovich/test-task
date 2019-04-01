@@ -23,7 +23,7 @@ const Toolbar = ({
   if (isMobile) {
     return (
       <S.Wrapper>
-        <S.Button onClick={() => actions.toggleFilter()}>
+        <S.Button onClick={() => pathname === '/' && actions.toggleFilter()}>
           <img src={filter ? Active : Logo} alt="logo" />
         </S.Button>
         <IconButton

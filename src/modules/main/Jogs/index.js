@@ -5,7 +5,6 @@ import { bindActionCreators } from 'redux';
 
 import { actions as jogsActions } from 'redux/jogs';
 import getJogs from './selectors';
-import Filter from './Filter';
 import Empty from './Empty';
 import Icon from './images/add.svg';
 import Form from './Form';
@@ -26,7 +25,7 @@ class Jogs extends Component {
   }
 
   render() {
-    const { jogs, filter, isOpen } = this.props;
+    const { jogs, isOpen } = this.props;
 
     if (!jogs.length && !isOpen) {
       return (<Empty />);
@@ -43,9 +42,6 @@ class Jogs extends Component {
     return (
       <S.Wrapper>
         {
-          filter && <Filter />
-        }
-        {
           jogs.map(elem => (
             <Item key={elem.id} data={elem} />
           ))
@@ -60,7 +56,6 @@ class Jogs extends Component {
 }
 
 Jogs.propTypes = {
-  filter: PropTypes.bool.isRequired,
   isOpen: PropTypes.bool.isRequired,
   jogs: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   actions: PropTypes.shape({
@@ -71,7 +66,6 @@ Jogs.propTypes = {
 
 const mapStateToProps = ({ jogs }) => ({
   jogs: getJogs(jogs),
-  filter: jogs.filter,
   isOpen: jogs.isOpen,
 });
 
