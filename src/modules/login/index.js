@@ -50,7 +50,9 @@ class Login extends Component {
 Login.propTypes = {
   isMobile: PropTypes.bool.isRequired,
   isAuthenticated: PropTypes.bool.isRequired,
-  history: PropTypes.shape({}).isRequired,
+  history: PropTypes.shape({
+    replace: PropTypes.func.isRequired,
+  }).isRequired,
   actions: PropTypes.shape({
     isAuthenticated: PropTypes.func.isRequired,
     authenticateRequest: PropTypes.func.isRequired,

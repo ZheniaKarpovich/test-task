@@ -33,8 +33,8 @@ Filter.defaultProps = {
 };
 
 Filter.propTypes = {
-  toDate: PropTypes.shape({}),
-  fromDate: PropTypes.shape({}),
+  toDate: PropTypes.instanceOf(Date),
+  fromDate: PropTypes.instanceOf(Date),
   actions: PropTypes.shape({
     setToDate: PropTypes.func.isRequired,
     setFromDate: PropTypes.func.isRequired,

@@ -11,6 +11,14 @@ import PrivateRoute from './PrivateRoute';
 
 
 class AppRouter extends Component {
+  static propTypes = {
+    isMobile: PropTypes.bool.isRequired,
+    isAuthenticated: PropTypes.bool.isRequired,
+    actions: PropTypes.shape({
+      useMobileVersion: PropTypes.func.isRequired,
+    }).isRequired,
+  };
+
   componentWillMount() {
     window.addEventListener('resize', this.handleWindowSizeChange);
   }
@@ -53,14 +61,6 @@ class AppRouter extends Component {
     );
   }
 }
-
-AppRouter.propTypes = {
-  isMobile: PropTypes.bool.isRequired,
-  isAuthenticated: PropTypes.bool.isRequired,
-  actions: PropTypes.shape({
-    useMobileVersion: PropTypes.func.isRequired,
-  }).isRequired,
-};
 
 const mapStateToProps = ({ auth, app }) => ({
   isMobile: app.isMobile,

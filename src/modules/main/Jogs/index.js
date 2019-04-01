@@ -12,6 +12,19 @@ import Item from './Item';
 import * as S from './styled';
 
 class Jogs extends Component {
+  static propTypes = {
+    isOpen: PropTypes.bool.isRequired,
+    jogs: PropTypes.arrayOf(PropTypes.shape({
+      date: PropTypes.number.isRequired,
+      time: PropTypes.number.isRequired,
+      distance: PropTypes.number.isRequired,
+    })).isRequired,
+    actions: PropTypes.shape({
+      toggleModal: PropTypes.func.isRequired,
+      getJogsRequest: PropTypes.func.isRequired,
+    }).isRequired,
+  };
+
   componentDidMount() {
     const { actions } = this.props;
 
@@ -54,15 +67,6 @@ class Jogs extends Component {
     );
   }
 }
-
-Jogs.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  jogs: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-  actions: PropTypes.shape({
-    toggleModal: PropTypes.func.isRequired,
-    getJogsRequest: PropTypes.func.isRequired,
-  }).isRequired,
-};
 
 const mapStateToProps = ({ jogs }) => ({
   jogs: getJogs(jogs),
