@@ -15,7 +15,6 @@ function* onGetJogsRequest() {
 
 function* onAddJogRequest({ payload }) {
   try {
-    console.log(payload);
     yield call(jogsHTTP.addJog, payload);
 
     yield put(types.addJogSuccess());

@@ -31,7 +31,7 @@ class Dealer extends Component {
 
     actions.addJogRequest({
       ...value,
-      date: value.date.getTime(),
+      date: value.date.toString(),
     });
   }
 
