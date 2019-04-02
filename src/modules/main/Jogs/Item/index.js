@@ -6,7 +6,7 @@ import * as S from './styled';
 
 const Item = ({ data }) => {
   const { date, distance, time } = data;
-  const formatDate = (new Date(date)).toLocaleDateString();
+  const formatDate = (new Date(date * 1000)).toLocaleDateString();
   const speed = Math.round((60 * distance) / time);
 
   return (

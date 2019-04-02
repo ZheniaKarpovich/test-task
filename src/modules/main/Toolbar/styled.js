@@ -9,6 +9,7 @@ export const Wrapper = styled.nav`
 export const Button = styled.button`
   width: 39px;
   height: 39px;
+  margin-right: 39px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,16 +25,11 @@ export const Link = styled(RouterLink)`
   font-weight: bold;
   font-size: 14px;
   line-height: 16px;
-  margin: 0 42px 0 42px;
-
+  margin: 0 21px 0 21px;
   border-bottom: ${({ active }) => (active ? '2px solid white' : null)};
 
   &:visited {
     color: white;
-  }
-
-  @media (max-width: 717px) {
-    margin: 0 21px 0 21px;
   }
 
   @media (max-width: 575px) {

@@ -10,9 +10,8 @@ const getJogs = createSelector(
     }
 
     const result = list.filter(({ date }) => {
-      const elemDate = new Date(date);
-
-      if (fromDate <= elemDate && toDate >= elemDate) {
+      const elemDate = new Date(date * 1000);
+      if (fromDate <= elemDate && (!toDate || toDate >= elemDate)) {
         return true;
       }
       return false;
