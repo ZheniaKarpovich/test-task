@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { bindActionCreators } from 'redux';
 
-import IconButton from 'components/IconButton';
 import { actions as appActions } from 'redux/app';
 import { actions as jogsActions } from 'redux/jogs';
 import Active from './images/filter-active.svg';
@@ -26,7 +25,7 @@ const Toolbar = ({
         <S.Button onClick={() => pathname === '/' && actions.toggleFilter()}>
           <img src={filter ? Active : Logo} alt="logo" />
         </S.Button>
-        <IconButton
+        <S.MenuButton
           onClick={() => actions.toggleMenu()}
           icon={Menu}
         />

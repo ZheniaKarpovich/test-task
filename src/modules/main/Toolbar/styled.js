@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { Link as RouterLink } from 'react-router-dom';
 
+import IconButton from 'components/IconButton';
+
 export const Wrapper = styled.nav`
   display: flex;
   align-items: center;
@@ -9,13 +11,16 @@ export const Wrapper = styled.nav`
 export const Button = styled.button`
   width: 39px;
   height: 39px;
-  margin-right: 39px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: inherit;
   border: none;
   outline: none;
+`;
+
+export const MenuButton = styled(IconButton)`
+  margin-left: 39px;
 `;
 
 export const Link = styled(RouterLink)`
