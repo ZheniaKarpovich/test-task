@@ -23,6 +23,12 @@ export const Item = styled.div`
   margin: 0 20px 0 20px;
 `;
 
+export const LeftItem = styled(Item)`
+  div .react-datepicker__triangle {
+    left: 185px;
+  }
+`;
+
 export const DatePicker = styled(ReactDatePicker)`
   width: 100px;
   height: 31px;
